@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/item1"
+        android:icon="@drawable/ic_highlight"
+        android:title="Yellow"
+        app:showAsAction="ifRoom"
+        />
+
+    <item
+        android:id="@+id/item2"
+        android:title="Yellow"
+        />
+
+    <item
+        android:id="@+id/item3"
+        android:title="Blue"
+        />
+
+    <item
+        android:id="@+id/item4"
+        android:title="Others">
+
+        <menu>
+            <item
+                android:id="@+id/item5"
+                android:title="Brown"
+                />
+            <item
+                android:id="@+id/item6"
+                android:title="Green"
+                />
+            <item
+                android:id="@+id/item7"
+                android:title="purple"
+                />
+
+        </menu>
+    </item>
+
+</menu>
