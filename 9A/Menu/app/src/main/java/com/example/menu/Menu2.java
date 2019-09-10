@@ -30,17 +30,20 @@ public class Menu2 extends AppCompatActivity {
 
         switch (item.getItemId()){
             case R.id.item1:
-                Toast.makeText(this, "Yellow", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Light", Toast.LENGTH_SHORT).show();
                 return true;
 
             case R.id.item2:
-                Toast.makeText(this, "Blue", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Yellow", Toast.LENGTH_SHORT).show();
                 return true;
 
             case R.id.item3:
-                Toast.makeText(this, "Red", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Blue", Toast.LENGTH_SHORT).show();
                 return true;
 
+            case R.id.item5:
+                Toast.makeText(this, "Brown", Toast.LENGTH_SHORT).show();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }// switch
