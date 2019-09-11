@@ -58,6 +58,7 @@
         android:id="@+id/btnLogin"
         android:layout_width="164dp"
         android:layout_height="38dp"
+        android:onClick="Validar"
         android:text="Acceder"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
