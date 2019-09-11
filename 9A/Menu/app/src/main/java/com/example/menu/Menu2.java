@@ -25,6 +25,7 @@ public class Menu2 extends AppCompatActivity {
         return true;
     }
 
+    //PAra menu de opciones
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
