@@ -84,68 +84,68 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         switch (item.getItemId()){
             case R.id.iteTransparent:
                 sbrAlpha.setProgress(0);
-                break;
+                return true;
 
             case R.id.iteSemitransparent:
                 sbrAlpha.setProgress(128);
-                break;
+                return true;
 
             case R.id.iteOpaque:
                 sbrAlpha.setProgress(255);
-                break;
+                return true;
 
             case R.id.iteRed:
                 sbrRed.setProgress(255);
                 sbrGreen.setProgress(0);
                 sbrBlue.setProgress(0);
-                break;
+                return true;
 
             case R.id.iteCyan:
                 sbrRed.setProgress(0);
                 sbrGreen.setProgress(255);
                 sbrBlue.setProgress(255);
-                break;
+                return true;
 
             case R.id.iteMagenta:
                 sbrRed.setProgress(255);
                 sbrGreen.setProgress(0);
                 sbrBlue.setProgress(255);
-                break;
+                return true;
 
             case R.id.iteYellow:
                 sbrRed.setProgress(255);
                 sbrGreen.setProgress(255);
                 sbrBlue.setProgress(0);
-                break;
+                return true;
 
             case R.id.iteBlack:
                 sbrRed.setProgress(0);
                 sbrGreen.setProgress(0);
                 sbrBlue.setProgress(0);
-                break;
+                return true;
 
             case R.id.iteWhite:
                 sbrRed.setProgress(255);
                 sbrGreen.setProgress(255);
                 sbrBlue.setProgress(255);
-                break;
+                return true;
 
             case R.id.iteGreen:
                 sbrRed.setProgress(0);
                 sbrGreen.setProgress(255);
                 sbrBlue.setProgress(0);
-                break;
+                return true;
 
             case R.id.iteBlue:
                 sbrRed.setProgress(0);
                 sbrGreen.setProgress(0);
                 sbrBlue.setProgress(255);
-                break;
+                return true;
 
             case R.id.iteAboutof:
                 Intent intent = new Intent(this, AboutOf.class);
                 startActivity(intent);
-                break;
+                return true;
 
             default:
                 super.onContextItemSelected(item);
@@ -153,6 +153,6 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         }
 
 
-        return true;
+
     }
 }
