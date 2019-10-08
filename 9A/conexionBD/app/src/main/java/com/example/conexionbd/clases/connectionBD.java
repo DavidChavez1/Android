@@ -16,9 +16,12 @@ public class connectionBD extends SQLiteOpenHelper{
     @Override
     public void onCreate(SQLiteDatabase market) {
         //Crear las tablas de la bd
-        market.execSQL("create table users(id primary key not null," +
-                "firstname text not null, lastname text not null, " +
-                "email text not null, password text)");
+        market.execSQL("create table users(" +
+                "id primary key autoincrement not null," +
+                "firstname text not null, " +
+                "lastname text not null, " +
+                "email text not null, " +
+                "password text not null)");
     }
 
     @Override
