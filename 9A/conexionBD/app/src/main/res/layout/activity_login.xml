@@ -63,7 +63,7 @@
             android:text="SING IN"
             tools:text="SING IN"
             android:background="@color/colorBtnSignin"
-            android:layout_margin="8dp"/>
+            android:layout_margin="15dp"/>
 
         <Button
             android:id="@+id/button3"
@@ -72,6 +72,6 @@
             android:text="SING UP"
             tools:text="SING UP"
             android:background="@color/colorBtnSignup"
-            android:layout_margin="8dp"/>
+            android:layout_margin="15dp"/>
     </LinearLayout>
 </RelativeLayout>

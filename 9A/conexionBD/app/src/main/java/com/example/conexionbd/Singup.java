@@ -3,6 +3,7 @@ package com.example.conexionbd;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -36,19 +37,54 @@ public class Singup extends AppCompatActivity {
         String Passwd = pwd.getText().toString();
 
         if (!Fname.isEmpty() && !Lname.isEmpty() && !Email.isEmpty() && !Passwd.isEmpty()){
-            ContentValues DATA = new ContentValues();
+            //Validacion para que el correo no se repita
 
-            DATA.put("firstname", Fname);
-            DATA.put("lastname", Lname);
-            DATA.put("email", Email);
-            DATA.put("password", Passwd);
+            Cursor row = market.rawQuery("SELECT email FROM users WHERE email = '" + Email + "'",null);
 
-            //Guardar valores en BD
-            market.insert("users", null, DATA);
-            market.close();
-            Toast.makeText(this, "El usuario fue creado", Toast.LENGTH_SHORT).show();
+            //if (row.moveToFirst())
+            if (row.getCount() > 0){
+                email.setError("el usuario ya existe");
+                Toast.makeText(this, "El usuario ya existe", Toast.LENGTH_SHORT).show();
+            } else {
+                ContentValues DATA = new ContentValues();
+
+                DATA.put("firstname", Fname);
+                DATA.put("lastname", Lname);
+                DATA.put("email", Email);
+                DATA.put("password", Passwd);
+
+                //Guardar valores en BD
+                market.insert("users", null, DATA);
+                market.close();
+
+                fname.setText("");
+                lname.setText("");
+                email.setText("");
+                pwd.setText("");
+
+                Toast.makeText(this, "El usuario fue creado", Toast.LENGTH_SHORT).show();
+            }
         }else{
-            Toast.makeText(this, "Los campos estan vacios", Toast.LENGTH_SHORT).show();
+            if (!Fname.isEmpty()){
+                lname.setError("El campo no puede ser vacio");
+                email.setError("El campo no puede ser vacio");
+                pwd.setError("El campo no puede ser vacio");
+            } else if (Lname.isEmpty()){
+                fname.setError("El campo no puede ser vacio");
+                email.setError("El campo no puede ser vacio");
+                pwd.setError("El campo no puede ser vacio");
+            } else if(Email.isEmpty()){
+                fname.setError("El campo no puede ser vacio");
+                lname.setError("El campo no puede ser vacio");
+                pwd.setError("El campo no puede ser vacio");
+            } else if (Passwd.isEmpty()){
+                fname.setError("El campo no puede ser vacio");
+                lname.setError("El campo no puede ser vacio");
+                email.setError("El campo no puede ser vacio");
+            } else {
+                Toast.makeText(this, "Los campos estan vacios", Toast.LENGTH_SHORT).show();
+            }
+
         }
 
     }
